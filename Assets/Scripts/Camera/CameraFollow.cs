@@ -36,6 +36,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (target != null) return;
 
+        // Suggestion: Tag "Player" como string mágico. Usá una const o dejá el target asignado por inspector y sacá este fallback.
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null) target = player.transform;

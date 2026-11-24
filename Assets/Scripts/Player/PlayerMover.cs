@@ -8,6 +8,7 @@ public class PlayerMover : MonoBehaviour
     private InputActionReference moveAction;
     private Rigidbody2D rb;
 
+    // Suggestion: El 10.0f se pisa en Awake con playerData.GetMoveSpeed(). Sacá el valor inicial para que el único dato sea el del SO.
     private float moveSpeed = 10.0f;
     private Vector2 moveDir;
 

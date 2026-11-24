@@ -3,6 +3,7 @@ using UnityEngine.Audio;
 
 public static class AudioVolume
 {
+    // Suggestion: Constantes en camelCase; en VolumeStepper y PlayerAnimator usás PascalCase (Step, ArmedOffset). Unificá el criterio.
     private const float defaultVolume = .1f;
     private const float minVolume = .0001f;
     

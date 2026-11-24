@@ -6,10 +6,13 @@ public class PlayerGroundChecker : MonoBehaviour
     [SerializeField] private PlayerSo playerData;
 
     [SerializeField] private Transform origin;        // Punto a la altura de los pies
+    // Suggestion: Estos valores iniciales se pisan en Awake con los del PlayerSo. Dejá los campos sin inicializar para no tener el dato duplicado.
     private float feetWidth = 0.3f;  // Ancho del personaje a la altura de los pies
     private float checkDistance = 0.2f; // Distancia del raycast para detectar el suelo
     private LayerMask groundLayer;
 
+    // Suggestion: Campos privados en PascalCase (IsGrounded, IsFullyGrounded), en el resto del proyecto usás camelCase.
+    // Pasalos a isGrounded / isFullyGrounded, o usá una property { get; private set; }.
     private bool IsGrounded;
     public bool GetIsGrounded() => IsGrounded;
     private bool IsFullyGrounded;
@@ -60,6 +63,7 @@ public class PlayerGroundChecker : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, checkDistance, groundLayer);
 
+        // Suggestion: Esto equivale a return hit; (RaycastHit2D convierte a bool). El if es redundante.
         if (!hit) return false;
 
         return true;

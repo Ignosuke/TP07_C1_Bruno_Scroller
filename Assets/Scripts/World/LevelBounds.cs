@@ -1,3 +1,4 @@
+// Suggestion: using sin usar (Visual Scripting no se usa en esta clase). Borralo.
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;

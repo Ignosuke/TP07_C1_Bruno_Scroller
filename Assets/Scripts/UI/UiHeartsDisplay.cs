@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// Error: La clase UIHeartsDisplay está en un archivo que se llama distinto (UiHeartsDisplay.cs, difiere en mayúsculas).
+// Unity lo compila pero tira un warning: renombrá el archivo o la clase para que coincidan.
 public class UIHeartsDisplay : MonoBehaviour
 {
     [SerializeField] private PlayerHealth playerHealth;

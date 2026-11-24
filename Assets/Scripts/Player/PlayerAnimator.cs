@@ -53,6 +53,8 @@ public class PlayerAnimator : MonoBehaviour
         shooter.OnArmedChanged += SetArmed;
     }
 
+    // Warning: En OnEnable te suscribís a shooter.OnArmedChanged pero acá no te desuscribís.
+    // Si el componente se apaga y se vuelve a prender, el listener queda duplicado. Agregá shooter.OnArmedChanged -= SetArmed; igual que con los otros eventos.
     private void OnDisable()
     {
         shooter.OnShot -= PlayShoot;

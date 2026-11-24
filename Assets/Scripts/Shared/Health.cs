@@ -38,6 +38,8 @@ public abstract class Health : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) => TryTakeDamageFrom(collision.collider);
     private void OnCollisionStay2D(Collision2D collision) => TryTakeDamageFrom(collision.collider);
     private void OnTriggerEnter2D(Collider2D other) => TryTakeDamageFrom(other);
+    // Bug: El enemigo tiene InvulnerabilityTime = 0 y la bala se destruye recién al final del frame (Destroy es diferido).
+    // Si en un frame corren dos o más FixedUpdate, OnTriggerStay2D vuelve a cobrar daño con la misma bala. Marcá la bala como consumida (flag o desactivar su collider) al primer impacto.
     private void OnTriggerStay2D(Collider2D other) => TryTakeDamageFrom(other);
 
     private void TryTakeDamageFrom(Collider2D other)

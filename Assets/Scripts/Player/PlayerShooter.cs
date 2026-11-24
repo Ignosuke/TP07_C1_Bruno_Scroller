@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+// Suggestion: using sin usar (Visual Scripting no se usa en esta clase). Borralo.
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -92,6 +93,7 @@ public class PlayerShooter : MonoBehaviour
             yield return null;
         }
 
+        // Suggestion: Acá recalculás el cooldown sin el Mathf.Max que usás en Awake (línea 35). Extraé un método CalculateCooldown(rate) y usalo en los tres lugares.
         fireCooldown = 1f / playerData.GetFireRate();
 
         OnBoostEnded?.Invoke();

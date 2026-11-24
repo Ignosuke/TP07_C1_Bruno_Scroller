@@ -37,6 +37,7 @@ public class ParallaxLayer : MonoBehaviour
         for (int i = 0; i < renderers.Length; i++)
             pieces[i] = renderers[i].transform;
 
+        // Suggestion: Si la capa no tiene hijos con SpriteRenderer, renderers[0] tira IndexOutOfRange. Validá renderers.Length antes.
         pieceWidth = renderers[0].bounds.size.x;
     }
 

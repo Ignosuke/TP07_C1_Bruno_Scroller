@@ -64,6 +64,8 @@ public class UIMainMenuManager : MonoBehaviour
     // Botones
     private void Play()
     {
+        // Warning: Nombre de escena como string mágico. En UIGameManager usás una const para el índice del menú, acá no.
+        // Definí una const (o un campo serializado) para la escena de juego y usala en todos lados.
         SceneManager.LoadScene("GameScene");
     }
 

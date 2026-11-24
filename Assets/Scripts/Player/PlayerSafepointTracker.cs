@@ -1,6 +1,9 @@
 using UnityEngine;
 
 // Va guardando la ultima posicion firme del jugador para poder devolverlo ahi
+// Error: La clase SafePointTracker está en un archivo que se llama distinto (PlayerSafepointTracker.cs).
+// Unity lo compila pero tira un warning.
+// Renombrá el archivo o la clase para que coincidan (y respetá la misma mayúscula en "SafePoint").
 public class SafePointTracker : MonoBehaviour
 {
     [SerializeField] private PlayerSo playerData;

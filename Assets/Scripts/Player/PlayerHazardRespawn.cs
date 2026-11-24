@@ -2,6 +2,9 @@ using UnityEngine;
 
 // Devuelve al jugador al ultimo punto firme cuando el golpe vino de una layer de peligro (Lethal)
 [RequireComponent(typeof(Rigidbody2D))]
+// Error: La clase HazardRespawn está en un archivo que se llama distinto (PlayerHazardRespawn.cs).
+// Unity lo compila pero tira un warning.
+// Renombrá el archivo o la clase para que coincidan.
 public class HazardRespawn : MonoBehaviour
 {
     [SerializeField] private PlayerSo playerData;
